@@ -34,7 +34,9 @@ public class LineComparison {
 
         if (length == length2)
             System.out.println("length and lenght2 lines are having same length");
+        else if(length > length2)
+            System.out.println("Length "+length+" is greater than Length2 "+length2);
         else
-            System.out.println("Both lines are having different length");
+            System.out.println("Length2 "+length2+" is greater than Length "+length);
     }
 }
