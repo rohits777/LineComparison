@@ -17,8 +17,24 @@ public class LineComparison {
         System.out.println("Enter y2 co-ordinate: ");
         int y2=sc.nextInt();
 
+        System.out.print("Enter the p1 co-ordinate : ");
+        int p1 = sc.nextInt();
+        System.out.print("Enter the q1 co-ordinates : ");
+        int q1 = sc.nextInt();
+        System.out.print("Enter the p2 co-ordinates : ");
+        int p2 = sc.nextInt();
+        System.out.print("Enter the q2 co-ordinates : ");
+        int q2 = sc.nextInt();
+
         double length=Math.sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2);
         System.out.println("Length of a line is: "+length);
 
+        double length2 = Math.sqrt((p2 - p1)^2 + (q2 - q1)^2);
+        System.out.println("Length of the line2 is :: "+length2);
+
+        if (length == length2)
+            System.out.println("length and lenght2 lines are having same length");
+        else
+            System.out.println("Both lines are having different length");
     }
 }
