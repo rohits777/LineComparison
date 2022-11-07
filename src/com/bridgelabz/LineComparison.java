@@ -1,42 +1,52 @@
 package com.bridgelabz;
-import java.util.*;
-public class LineComparison {
+import java.util.Scanner;
+
+class LineComparision{
+    static double length(int x1,int y1, int x2, int y2){
+        double length = Math.sqrt((double)((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)));
+        System.out.println("The length 1 is :" + length);
+        return length;
+    }
+}
+ class Compare extends LineComparision  {
+
     public static void main(String[] args) {
-        System.out.println("Welcome to line comparision program");
-        Scanner sc=new Scanner(System.in);
 
-        System.out.println("Enter x1 co-ordinate: ");
-        int x1= sc.nextInt();
+        Scanner Sc = new Scanner(System.in);
 
-        System.out.println("Enter y1 co-ordinate: ");
-        int y1=sc.nextInt();
+        // input coordinates of line 1
+        System.out.println("Enter the value of X1 ");
+        int x1 = Sc.nextInt();
+        System.out.println("Enter the value of Y1 ");
+        int y1 = Sc.nextInt();
+        System.out.println("Enter the value of X2 ");
+        int x2 = Sc.nextInt();
+        System.out.println("Enter the value of Y2 ");
+        int y2 = Sc.nextInt();
 
-        System.out.println("Enter x2 co-ordinate: ");
-        int x2=sc.nextInt();
+        // input of line 2
+        System.out.println("Enter the value of a1 ");
+        int a1 = Sc.nextInt();
+        System.out.println("Enter the value of b1 ");
+        int b1 = Sc.nextInt();
+        System.out.println("Enter the value of a2 ");
+        int a2 = Sc.nextInt();
+        System.out.println("Enter the value of b2 ");
+        int b2 = Sc.nextInt();
 
-        System.out.println("Enter y2 co-ordinate: ");
-        int y2=sc.nextInt();
+        LineComparision obj = new LineComparision();
+        double l1 = obj.length(x1,y1,x2,y2);
+        double l2 = obj.length(a1, b1,a2,b2);
 
-        System.out.print("Enter the p1 co-ordinate : ");
-        int p1 = sc.nextInt();
-        System.out.print("Enter the q1 co-ordinates : ");
-        int q1 = sc.nextInt();
-        System.out.print("Enter the p2 co-ordinates : ");
-        int p2 = sc.nextInt();
-        System.out.print("Enter the q2 co-ordinates : ");
-        int q2 = sc.nextInt();
+        String line1 = Double.toString(l1);
+        String line2 = Double.toString(l2);
 
-        double length=Math.sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2);
-        System.out.println("Length of a line is: "+length);
-
-        double length2 = Math.sqrt((p2 - p1)^2 + (q2 - q1)^2);
-        System.out.println("Length of the line2 is :: "+length2);
-
-        if (length == length2)
-            System.out.println("length and lenght2 lines are having same length");
-        else if(length > length2)
-            System.out.println("Length "+length+" is greater than Length2 "+length2);
-        else
-            System.out.println("Length2 "+length2+" is greater than Length "+length);
+        if (line1.compareTo(line2) < 0) {
+            System.out.println(" Line 1 is greater than line 2");
+        } else if (line1.compareTo(line2) > 0) {
+            System.out.println("Line 1 is shorter than line 2");
+        } else if(line1.compareTo(line2) == 0) {
+            System.out.println("Both line are equal ");
+        }
     }
 }
